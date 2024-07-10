@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { FaArrowRight } from "react-icons/fa";
 import './App.css';
 
 const App = () => {
-  const [speed, setSpeed] = useState(50);
+  const [speed, setSpeed] = useState(30);
 
   const handleClick = (url) => {
     axios.get(url)
@@ -39,29 +40,29 @@ const App = () => {
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/start')}
           >
-            Forward
+            ⬆
           </button>
         </div>
 
         {/* Left Start/Stop Right */}
         <div className="button-group">
-          Right
-          <button
-            className="control-button"
-            onClick={() => handleClick('http://192.168.0.101:5000/right')}
-          >
-            Left
-          </button>
           <button
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/left')}
-          >
+            >
+            ⬅
+          </button>
+          <button
+            className="control-button stop-button"
+            onClick={() => handleClick('http://192.168.0.101:5000/stop')}
+            >
             Stop
           </button>
           <button
             className="control-button"
-            onClick={() => handleClick('http://192.168.0.101:5000/stop')}
-          >
+            onClick={() => handleClick('http://192.168.0.101:5000/right')}
+            >
+            <FaArrowRight />
           </button>
         </div>
 
@@ -71,7 +72,7 @@ const App = () => {
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/reverse')}
           >
-            Reverse
+            ⬇
           </button>
         </div>
       </div>
