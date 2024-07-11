@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight, FaArrowLeft, FaArrowUp, FaArrowDown } from "react-icons/fa";
 import './App.css';
 
 const App = () => {
@@ -40,7 +40,7 @@ const App = () => {
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/start')}
           >
-            ⬆
+            <FaArrowUp />
           </button>
         </div>
 
@@ -49,19 +49,19 @@ const App = () => {
           <button
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/left')}
-            >
-            ⬅
+          >
+            <FaArrowLeft />
           </button>
           <button
             className="control-button stop-button"
             onClick={() => handleClick('http://192.168.0.101:5000/stop')}
-            >
+          >
             Stop
           </button>
           <button
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/right')}
-            >
+          >
             <FaArrowRight />
           </button>
         </div>
@@ -72,7 +72,7 @@ const App = () => {
             className="control-button"
             onClick={() => handleClick('http://192.168.0.101:5000/reverse')}
           >
-            ⬇
+            <FaArrowDown />
           </button>
         </div>
       </div>
